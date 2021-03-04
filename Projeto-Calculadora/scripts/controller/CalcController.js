@@ -21,6 +21,9 @@ class CalcController {
         }, 1000);
 
     }
+    initButtonsEvents(){
+        let buttons = document.querySelectorAll("#buttons > g, #parts > g");
+    }
 
     setDisplayDateTime(){
 
