@@ -283,18 +283,19 @@ class CalcController {
     }
 
     addDot(){
+
         let lastOperation = this.getLastOperation();
 
-        if(typeof lastOperation === 'string' && lastOperation.split('').indexOf('.')> -1){
-            return;
-        }
+        if (typeof lastOperation === 'string' && lastOperation.split('').indexOf('.') > -1) return;
 
-        if(this.isOperator(lastOperation) || !lastOperation){
-            this.pushOperation('0.');
+        if (this.isOperator(lastOperation) || !lastOperation) {
+            this.setLastOperation('0.');
         } else {
             this.setLastOperation(lastOperation.toString() + '.');
         }
+
         this.setLastNumberToDisplay();
+
     }
     execBtn(value) {
 
@@ -341,8 +342,7 @@ class CalcController {
                 this.addOperation(parseInt(value));
                 break;
             default:
-                this.setError();  
-                break;
+                this.setError();
         }
 
     }
@@ -397,7 +397,7 @@ class CalcController {
 
         if(value.toString().length > 10){
             this.setError();
-            return;
+            return false;
         }
 
         this._displayCalcEl.innerHTML = value;
