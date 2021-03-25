@@ -14,6 +14,32 @@ class CalcController {
         this.initKeyboard();
     }
 
+    pasteFromClipboard(){
+
+        document.addEventListener('paste', e=>{
+            
+            let text = e.clipboardData.getData('Text');
+
+            this.displayCalc = parseFloat(text);
+        });
+
+    }
+
+    copyToClipboard() {
+        let input = document.createElement('input');
+
+        input.value = this.displayCalc;
+
+        document.body.appendChild(input);
+
+        input.select();
+
+        document.execCommand("Copy");
+
+        input.remove();
+
+    }
+
     initialize(){
 
         
@@ -26,7 +52,7 @@ class CalcController {
         }, 1000);
 
         this.setLastNumberToDisplay();
-
+        this.pasteFromClipboard();
     }
 
     initKeyboard(){
@@ -65,6 +91,9 @@ class CalcController {
                 case '9':  
                     this.addOperation(parseInt(e.key));
                     break;
+                case 'c':
+                    if(e.ctrlKey) this.copyToClipboard();
+                    break;    
             }
         });
     }
@@ -130,13 +159,13 @@ class CalcController {
         if(this._operation.length > 3) {
             last = this._operation.pop();
             this._lastNumber = this.getResult();
-        }else if(this._operation.length == 3){
+        }else if(this._operation.length === 3){
             this._lastNumber = this.getLastItem(false);
         }        
         
         let result = this.getResult();
 
-        if(last == '%'){
+        if(last === '%'){
 
             result /= 100;
             this._operation = [result]
@@ -159,7 +188,7 @@ class CalcController {
 
         for(let i = this._operation.length-1; i >=0; i--){
 
-            if(this.isOperator(this._operation[i]) == isOperator){
+            if(this.isOperator(this._operation[i]) === isOperator){
                 lastItem = this._operation[i];
                 break;
             }
