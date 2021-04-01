@@ -1,1 +1,1 @@
-alert("Hello World!!!");
+document.querySelector("#exampleInputName").value = "OISAD"
