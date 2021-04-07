@@ -1,1 +1,1 @@
-document.querySelector("#exampleInputName").value = "OISAD"
+var nome = document.querySelector("#exampleInputName"); 
