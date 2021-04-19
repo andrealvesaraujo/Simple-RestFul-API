@@ -108,9 +108,9 @@ class User {
             
             users.map(u=>{
 
-                if(u._id ===this.id){
+                if(u._id == this.id){
 
-                    u = this;
+                    Object.assign(u, this);
 
                 }
 
@@ -125,7 +125,7 @@ class User {
             users.push(this);            
 
         }
-        
+
         // sessionStorage.setItem("users",JSON.stringify(users));
         localStorage.setItem("users",JSON.stringify(users));
 
