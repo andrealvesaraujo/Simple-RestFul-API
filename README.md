@@ -1,11 +1,70 @@
-# Udemy_Javascript_Completo
+# RESTful API de Usuários
 
-Curso Da Udemy de Javascript feito em 2021. Aqui está ele: https://www.udemy.com/course/curso-html5-css3-javascript/ 
+API desenvolvida em Node.js para o Curso Completo de JavaScript na Udemy.com.
 
-Tem 8 projetos no total. Um projeto é uma pasta com um README explicativo próprio.
+### Instalação
+```
+npm install
+```
 
-## Projetos feitos até agora:
+### Excutando servidor
+```
+npm start
+```
+## Rotas
+Obter todos os usuários:
+```
+GET /users
+```
+Exemplo de resultado:
+```json
+{
+    "users":[]
+}
+```
 
-1) Calculadora: https://calculadora-andrealvesaraujo.vercel.app/
+Cadastrar um novo usuário:
+```
+POST /users
+```
+Exemplo de resultado:
+```json
+{
+    "_id":"hjkhfui324",
+    "name":"João Rangel"
+}
+```
 
-2) Gerenciador de Usuários: https://gerenciamento-de-usuarios-andrealvesaraujo.vercel.app/
+Obter dados de um usuário:
+```
+GET /users/:id
+```
+Exemplo de resultado:
+```json
+{
+    "_id":"hjkhfui324",
+    "name":"João Rangel"
+}
+```
+
+Editar um usuário:
+```
+PUT /users/:id
+```
+Exemplo de resultado:
+```json
+{
+    "_id":"hjkhfui324"
+}
+```
+
+Excluir um usuário:
+```
+DELETE /users/:id
+```
+Exemplo de resultado:
+```json
+{
+    "_id":"hjkhfui324"
+}
+```
