@@ -12,7 +12,9 @@ app.use(expressValidator());
 
 consign().include('routes').include('utils').into(app);
 
-app.listen(3000, '127.0.0.1', () => {
+const port = process.env.PORT || 3000;
+
+app.listen(3000, () => {
 
     console.log("Servidor rodando!");
 
