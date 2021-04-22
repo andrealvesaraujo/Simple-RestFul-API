@@ -1,10 +1,11 @@
 {
   "name": "rest-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "API desenvolvida em Node.js para o Curso Completo de JavaScript na Udemy.com.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "author": "André Alves",
   "license": "ISC",
@@ -14,5 +15,15 @@
     "express": "^4.17.1",
     "express-validator": "^5.3.1",
     "nedb": "^1.8.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrealvesaraujo/Simple-RestFul-API.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/andrealvesaraujo/Simple-RestFul-API/issues"
+  },
+  "homepage": "https://github.com/andrealvesaraujo/Simple-RestFul-API#readme"
 }
