@@ -14,7 +14,7 @@ consign().include('routes').include('utils').into(app);
 
 const port = process.env.PORT || 3000;
 
-app.listen(port, 'https://simple-restful-api-git-main-andrealvesaraujo.vercel.app/', () => {
+app.listen(port, 'https://simple-restful-api-git-main-andrealvesaraujo.vercel.app', () => {
 
     console.log("Servidor rodando!");
 
