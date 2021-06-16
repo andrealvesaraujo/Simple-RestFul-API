@@ -1,6 +1,7 @@
 # RESTful API de Usuários
 
-API desenvolvida em Node.js para o Curso Completo de JavaScript na Udemy.com.
+Restful-API desenvolvida desenvolvida no Curso Completo de JavaScript na Udemy.com em 2021
+(https://www.udemy.com/course/javascript-curso-completo/). 
 
 ### Instalação
 ```
